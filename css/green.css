@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* CSS Document */
+::selection{background-color: #0bbe06;}
+a:focus,a:hover,a:active{ text-decoration:none; color: #0bbe06;}
+.head_menu_a li.active a{color: #0bbe06;}
+.head_menu_a li.active a:after{ background: #0bbe06;}
+.head_user li a:hover {color: #0bbe06;}
+.head_user li .user a.mac_user_g{color: #0bbe06;}
+.head_menu_b:hover a.menu{background: #0bbe06;border-right: 1px solid #0bbe06;}
+.head_search form:hover .submit,.head_search form .submit.search_btn{background: #0bbe06;}
+.nav_list li.active a{color: #0bbe06;}
+.hot_banner .head_menu_a a:hover,.hot_banner .head_user a:hover,.hot_banner .head_hot_search a:hover,.hot_banner .head_user li .dropbox.user a:hover{color: #0bbe06;}
+.hot_banner .head_user li .user a.mac_user_g {color: #0bbe06;}
+a:hover.swiper-button-next,a:hover.swiper-button-prev{background:#0bbe06;}
+.swiper-pagination-bullet-active {background: #0bbe06;}
+.vodlist_item:hover a,.topiclist_item:hover a,.artlist_item:hover a,.arthom_item:hover a,.gw_action a:hover{color: #0bbe06;}
+.vodlist_thumb .text_dy,.ranklist_thumb .text_dy{color: #0bbe06;}
+.artlist_item .pic_text,.artbanner_item .pic_text{ color: #0bbe06; border: 1px solid #0bbe06;}
+.art_navlist li.active a{position: relative; color: #0bbe06; }
+.article_box .digg_link{background: #0bbe06;background: -webkit-linear-gradient(270deg,#f7ab1c,#fa6161 52%,#0bbe06);background: linear-gradient(270deg,#f7ab1c,#fa6161 52%,#0bbe06);}
+.article_box a:hover.digg_link{color: #fff; background: #0bbe06;}
+.pannel_head .title em,.pannel_head em{color: #0bbe06;}
+.pannel .search_tips a {color: #0bbe06;}
+.pannel h2.title i {color: #0bbe06;}
+.content_detail .playbtn a,.content_detail .playbtn a.btn_share{color: #0bbe06;border: 1px solid #0bbe06;}
+.content_detail .pull_right a:hover{color: #0bbe06;}
+.play_but a:hover,.play_vlist a:hover .play_vlist_title,.play_vlist_now a:hover{color: #0bbe06;}
+.play_namebox .fenlei{border: 1px solid #0bbe06; color: #0bbe06; }
+.play_vlist_thumb.vnow::after{border: 3px solid #0bbe06;}
+.vnow .play_vlist_title{color: #0bbe06;}
+.player .text_score,.cblock .text_score {color: #0bbe06;}
+.content_playlist li.active a{color: #0bbe06;border: 1px solid #0bbe06;}
+.type_list_menu li.active a{color: #0bbe06;}
+.zbvodlist_box:hover{border:1px solid #0bbe06;}
+.seebtn a {color: #0bbe06;}
+.head_hot_search .hot_search_tit i {color: #0bbe06;}
+.ranklist_item a:hover .title{color: #0bbe06;}
+.sx_txt li,.sx_title2{color: #0bbe06;}
+.screen_list li a:hover,.list_type_title span a:hover,.screen_list.sx_tz li a:hover{color: #0bbe06;}
+.screen_list li.ik a{color: #0bbe06;}
+.screen_list li.ik_fl a{color: #0bbe06;}
+.type_sxbtn a{color: #0bbe06;}
+.sx_total em{color: #0bbe06;}
+#rating span.star_tips {color: #0bbe06;}
+.gbook_submit {background: #0bbe06!important;border: 1px solid #0bbe06!important;}
+.input_wrap .comment_submit{background: #0bbe06!important;border: 1px solid #0bbe06!important;}
+.notice .nico{color: #0bbe06;}
+.notice .nic{color: #0bbe06;}
+.tabs ul li label:hover, .tabs ul li label:focus, .tabs ul li label:active {color: #0bbe06;}
+.tabs .content section h2 {color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(1):checked ~ .content > section:nth-child(1) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(2):checked ~ .content > section:nth-child(2) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(3):checked ~ .content > section:nth-child(3) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(4):checked ~ .content > section:nth-child(4) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(5):checked ~ ul > li:nth-child(5) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(5):checked ~ .content > section:nth-child(5) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(6):checked ~ ul > li:nth-child(6) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(6):checked ~ .content > section:nth-child(6) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(7):checked ~ ul > li:nth-child(7) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(7):checked ~ .content > section:nth-child(7) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(8):checked ~ ul > li:nth-child(8) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(8):checked ~ .content > section:nth-child(8) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(9):checked ~ ul > li:nth-child(9) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(9):checked ~ .content > section:nth-child(9) {display: block;}
+.tabs input[name="tab-control"]:nth-of-type(10):checked ~ ul > li:nth-child(10) > label {cursor: default;color: #0bbe06;}
+.tabs input[name="tab-control"]:nth-of-type(10):checked ~ .content > section:nth-child(10) {display: block;}
+.extra li a.backtop:hover {background-color: #0bbe06;}
+.page li.active a,.page li.disabled a{ background-color: #0bbe06; border: 1px solid #0bbe06;}
+.page_tips span{color: #0bbe06;}
+.dropdown .copy_btn {background: #0bbe06;cursor: pointer;}
+.am-share-footer .copy_btn {color: #0bbe06;}
+.weui_text .weui-btn a {dbackground: #0bbe06;border:1px solid #0bbe06;}
+.history_title a:hover,.mac_history_box li.clear_btn a:hover,.mac_history_box li a:hover .vodlist_title{color: #0bbe06!important;}
+.mac_history_box .user_log_tips a{background: #0bbe06; }
+@media (max-width:820px){
+	.head_menu_b:hover a.menu{background: none;color: #0bbe06;border:0;}
+}
+.extra li a.backtop {display: none;background-color: rgba(56, 202, 52, 0.8);color: #FFFFFF;}
+.btn-brand {background: #0bbe06;}
+.reg-ts span  {color: #0bbe06;}
+.box-star-list li:hover a span:after,.box-star-list li:hover a span:before,.box-star-list li.active a span:after,.box-star-list li.active a span:before{border-bottom: 6px solid #0bbe06;}
+.box-star-list li:hover a span:before,.box-star-list li.active a span:before{border-bottom-color: #0bbe06;}
+.star-video-list .box-star-list {border-top: 1px solid #0bbe06;}
