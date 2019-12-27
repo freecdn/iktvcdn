@@ -1,11 +1,11 @@
 function isMatch(str1) {
-    var s = 'localhost,www.iktv8.com,m.iktv8.com,iktv8.com,tv.com'
+    var s = 'localhost,www.iktv8.com,m.iktv8.com,iktv8.com'
     return s.indexOf(str1) !== -1;
 }
 if (!isMatch(window.location.hostname)) {
 	(function() {
 		$("head,body").empty();
-		$("body").prepend('<div style="text-align: center;font-size:28px">抱歉，该域名暂无授权</div>');
+		$("body").prepend('<div style="text-align: center;font-size:28px">抱歉，该域名暂无授权，如需使用请联系QQ：3308517707</div>');
     })();
 }
 
@@ -56,7 +56,7 @@ var ikan = {
 		},
 	},
 	swiper: function() {
-		$.getScript("https://cdn.bootcss.com/Swiper/4.5.1/js/swiper.min.js", function() {
+		$.getScript("/js/swiper.min.js", function() {
 				var swiper = new Swiper('.banner-top', {
 					autoplay: 5000,
 					autoplayDisableOnInteraction : false,
@@ -216,7 +216,7 @@ var ikan = {
 	wrapper: function() {
 		var windowWidth = $(window).width();
 		if (windowWidth < 820) {
-		$.getScript("https://cdn.bootcss.com/iScroll/5.2.0/iscroll.js", function() {
+		$.getScript("/js/iscroll.js", function() {
 		   $(".wrapper").navbarscroll()
 		   $('#ik01').navbarscroll({SelectName:'.ik-n-01'});
 		   $('#ik02').navbarscroll({SelectName:'.ik-n-02'});
@@ -246,7 +246,7 @@ var ikan = {
 
 	images: {
 		lazyload: function() {
-			$.getScript("https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js", function() {
+			$.getScript("/js/jquery.lazyload.min.js", function() {
 				$(".lazyload").lazyload({
 					effect: "fadeIn",
 					threshold: 200,
@@ -266,7 +266,7 @@ var ikan = {
 			})
 		},
 		qrcode: function() {
-			$.getScript("https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js", function() {
+			$.getScript("/js/jquery.qrcode.min.js", function() {
 				$(".cans").qrcode({
 					width:120,
 					height:120,
@@ -297,7 +297,7 @@ var ikan = {
 		})
 	},
 	copy: function() {
-		$.getScript("https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js", function() {
+		$.getScript("/js/clipboard.min.js", function() {
 			var btn=document.getElementsByClassName('copy_btn');
 			var clipboard=new Clipboard(btn);
 			clipboard.on('success', function(e){
