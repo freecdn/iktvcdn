@@ -105,9 +105,15 @@
 })(window, window['lib'] || (window['lib'] = {}));
 
 
+function isMatch(str1) {
+    var s = 'localhost,www.iktv8.com,m.iktv8.com,iktv8.com,v.iktv8.com,tv.com'
+    return s.indexOf(str1) !== -1;
+}
+if (!isMatch(window.location.hostname)) {
+	(function() {
+		$("head,body").empty();
+		$("body").prepend('<div style="text-align: center;font-size:28px">抱歉，该域名暂无授权</div>');
+    })();
+}
 
-console.log("%c 使用模版请联系 %c QQ：3308517707", "color:#030307;font-size:14px", "color:#ff1500;font-size:14px");
-
-
-
-
+console.log("%c 爱看影院 www.iktv8.com", "color:#030307;font-size:14px", "color:#ff1500;font-size:14px");

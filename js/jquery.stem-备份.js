@@ -1,11 +1,11 @@
 function isMatch(str1) {
-    var s = 'localhost,www.iktv8.com,m.iktv8.com,iktv8.com,tv.com'
+    var s = 'localhost,www.iktv8.com,m.iktv8.com,ce.iktv8.com,v.iktv8.com'
     return s.indexOf(str1) !== -1;
 }
 if (!isMatch(window.location.hostname)) {
 	(function() {
 		$("head,body").empty();
-		$("body").prepend('<div style="text-align: center;font-size:28px">抱歉，该域名暂无授权</div>');
+		$("body").prepend('<div style="text-align: center;font-size:28px">抱歉，该域名暂无授权，如需使用请联系QQ：3308517707</div>');
     })();
 }
 
@@ -56,7 +56,7 @@ var ikan = {
 		},
 	},
 	swiper: function() {
-		$.getScript(maccms.path + "js/swiper.min.js", function() {
+		$.getScript("https://cdn.staticfile.org/Swiper/3.4.2/js/swiper.min.js", function() {
 				var swiper = new Swiper('.banner-top', {
 					autoplay: 5000,
 					autoplayDisableOnInteraction : false,
@@ -168,43 +168,6 @@ var ikan = {
 			}
 		})
     },
-	Sort: function() {
-			$(".sort-button").each(function(){
-				$(this).on("click",function(e){
-					e.preventDefault();
-					$(this).parent().parent().parent().find(".sort-list").each(function(){
-					    var playlist=$(this).find("li");
-					    for(let i=0,j=playlist.length-1;i<j;){
-					        var l=playlist.eq(i).clone(true);
-					        var r=playlist.eq(j).replaceWith(l);
-					        playlist.eq(i).replaceWith(r);
-					        ++i;
-					        --j;
-					    }
-					});
-				});
-			});
-		},
-	Player: function() {	
-			if($(".player-fixed").length){
-				if(!ikan.browser.useragent.mobile){
-					$(window).scroll(function(){
-						if($(window).scrollTop()>window.outerHeight){
-							$(".player-fixed").addClass("fixed fadeInDown");
-							$(".player-fixed-off").show();
-							
-						}else if($(window).scrollTop()<window.outerHeight){
-							$(".player-fixed").removeClass("fixed fadeInDown");
-							$(".player-fixed-off").hide();
-						}
-					});
-				}
-				$(".player-fixed-off").click(function() {
-					$(".player-fixed").removeClass("fixed fadeInDown");
-				});
-			}
-			
-		},
 	Search: function() {
 		$("input.form_control").focus(function(){
 			$(".submit").addClass("search_btn");	
@@ -216,7 +179,7 @@ var ikan = {
 	wrapper: function() {
 		var windowWidth = $(window).width();
 		if (windowWidth < 820) {
-		$.getScript(maccms.path + "js/iscroll.js", function() {
+		$.getScript("https://cdn.staticfile.org/iScroll/5.2.0/iscroll.js", function() {
 		   $(".wrapper").navbarscroll()
 		   $('#ik01').navbarscroll({SelectName:'.ik-n-01'});
 		   $('#ik02').navbarscroll({SelectName:'.ik-n-02'});
@@ -243,10 +206,32 @@ var ikan = {
 			$("#fd_tips").remove();
 		});
 	},
-
+	shorturl: function(){
+		var short = $("#short");
+		var short2 = $("#short2");
+		var url2 = "https://api.weibo.com/2/short_url/shorten.json";
+		var app_key = $("#app_key").val();
+		var shareurl = $("#shareurl").val();
+		if (shareurl=="") {
+			var cmd2 = url2 + "?source=" + app_key + "&url_long=" + encodeURIComponent(ikan.browser.url);
+		}else{
+            var cmd2 = url2 + "?source=" + app_key + "&url_long=" + shareurl + encodeURIComponent(ikan.browser.urlpath);
+		}
+		$.ajax({
+			url: cmd2,
+			type: "GET",
+			dataType: "jsonp", 
+			cache: false,
+			success: function (data, status) {
+				for(x in data.data.urls[0]) ;
+				short.append( data.data.urls[0].url_short);
+				short2.append( data.data.urls[0].url_short);
+			}
+		});
+	},
 	images: {
 		lazyload: function() {
-			$.getScript(maccms.path + "js/jquery.lazyload.min.js", function() {
+			$.getScript("https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js", function() {
 				$(".lazyload").lazyload({
 					effect: "fadeIn",
 					threshold: 200,
@@ -266,7 +251,7 @@ var ikan = {
 			})
 		},
 		qrcode: function() {
-			$.getScript(maccms.path + "/js/jquery.qrcode.min.js", function() {
+			$.getScript("https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js", function() {
 				$(".cans").qrcode({
 					width:120,
 					height:120,
@@ -297,7 +282,7 @@ var ikan = {
 		})
 	},
 	copy: function() {
-		$.getScript(maccms.path + "/js/clipboard.min.js", function() {
+		$.getScript("https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js", function() {
 			var btn=document.getElementsByClassName('copy_btn');
 			var clipboard=new Clipboard(btn);
 			clipboard.on('success', function(e){
@@ -316,13 +301,13 @@ var ikan = {
 		var wx_qrcode = $("#wx_qrcode").val();
 		var zans_qrcode = $("#zans_qrcode").val();
 		$(".btn_wxgzh").click(function() {
-            $("body").append('<div class="ikan_wrap"><div class="mac_pop_bg"></div><div class="ikan_content"><div class="ikan_content_hd"><h4 class="ikan_content_title"><span style="color: #f44336;">关于本站广告<span></span></span></h4></div><div class="ikan_content_bd"><p>1、网站运营需要成本</p><p>2、网站底部广告每日点击一次即可，可点击X关闭</p><p>3、感谢您的支持，祝您观影愉快！</p><p>4、有问题可在留言板留言</p></div><div class="ikan_content_ft"><a class="close_box" href="javascript:;">好的，了解！</a></div></div></div>');
+            $("body").append('<div class="ikan_wrap"><div class="mac_pop_bg"></div><div class="ikan_content"><div class="ikan_content_hd"><h4 class="ikan_content_title"><span style="color: #f44336;">' + wx_name + '<span></h4></div><div class="ikan_content_bd"><img class="info_img" src="' + wx_qrcode + '" alt="公众号二维码"><p>' + site_wxewmtext + '</p></div><div class="ikan_content_ft"><a class="close_box" href="javascript:;">下次再说</a></div></div></div>');
 			$(".close_box,.mac_pop_bg").click(function() {
 				$(".ikan_wrap").remove();
 		    });
 		});
 		$(".btn_zhans").click(function() {
-            $("body").append('<div class="ikan_wrap"><div class="mac_pop_bg"></div><div class="ikan_content"><div class="ikan_content_hd"><h4 class="ikan_content_title">感谢赞赏</h4></div><div class="ikan_content_bd"><img class="info_img" src="https://puui.qpic.cn/fans_admin/0/3_1440820217_1572312606008/0" alt="赞赏二维码"><p>长按识别二维码或微信扫描二维码</p>金额随意，多少都是支持</p></div><div class="ikan_content_ft"><a class="ikan_btn_no" href="javascript:;">残忍拒绝</a><a class="close_box" href="javascript:;">取消</a></div></div></div>');
+            $("body").append('<div class="ikan_wrap"><div class="mac_pop_bg"></div><div class="ikan_content"><div class="ikan_content_hd"><h4 class="ikan_content_title">感谢赞赏</h4></div><div class="ikan_content_bd"><img class="info_img" src="' + zans_qrcode + '" alt="赞赏二维码"><p>长按识别二维码或微信扫描二维码</p>金额随意，多少都是支持</p></div><div class="ikan_content_ft"><a class="ikan_btn_no" href="javascript:;">残忍拒绝</a><a class="close_box" href="javascript:;">取消</a></div></div></div>');
 			$(".ikan_btn_no").click(function() {
 				alert("就知道你会点，哼~，不过还要祝你观影愉快～！")
 				$(".ikan_wrap").remove();
@@ -334,16 +319,15 @@ var ikan = {
 	}
 };
 $(document).ready(function() {
-	ikan.browser.useragent.mobile && (ikan.mobile.share());
+	ikan.browser.useragent.mobile && (ikan.mobile.share(), ikan.mobile.xiaoshuo());
 	ikan.swiper();
 	ikan.menu();
 	ikan.fixed();
 	ikan.Search();
-	ikan.Sort();
-	ikan.Player();
 	ikan.wrapper();
 	ikan.flip();
 	ikan.closebtn();
+	ikan.shorturl();
 	ikan.images.lazyload();
 	ikan.images.qrcode();
 	ikan.scrolltop();
